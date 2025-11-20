@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Artista 3D y Diseño</title>
+    <!-- Load Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply 'Inter' font globally for a modern, clean look */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for smooth scrolling effect on navigation */
+        .scroll-target {
+            padding-top: 6rem; /* Offset for fixed header */
+            margin-top: -6rem;
+        }
+
+        /* CLASE BASE PARA LAS IMAGENES DE PROYECTO */
+        .project-image-placeholder {
+            height: 200px; /* Altura fija para la imagen */
+            background-color: #3f3f46; /* Gris de fondo para el placeholder */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        /* CLASES ESPECÍFICAS PARA CADA PROYECTO (DEBES REEMPLAZAR EL URL) */
+        /* Ejemplo: Reemplaza 'URL_DE_TU_IMAGEN_1' con el enlace a tu render. */
+        #project-1 {
+            background-image: url('https://placehold.co/600x400/1e293b/a0a0a0?text=IMAGEN+PROYECTO+1');
+        }
+        #project-2 {
+            background-image: url('https://placehold.co/600x400/1e293b/a0a0a0?text=IMAGEN+PROYECTO+2');
+        }
+        #project-3 {
+            background-image: url('https://placehold.co/600x400/1e293b/a0a0a0?text=IMAGEN+PROYECTO+3');
+        }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1a1a1a', /* Gris muy oscuro */
+                        'secondary-light': '#a0a0a0', /* Gris medio */
+                        'accent': '#e0e0e0', /* Gris claro vibrante para el acento */
+                        'background-main': '#000000', /* Negro puro */
+                        'card-bg': '#2a2a2a', /* Gris oscuro para las tarjetas */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-main text-white min-h-screen">
+
+    <!-- Header & Navigation --><header class="sticky top-0 z-50 bg-background-main/95 backdrop-blur-sm shadow-lg border-b border-primary-dark/50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent">
+                Iñaki Iribarren Pinciroli
+            </h1>
+            <div class="space-x-8 hidden md:flex">
+                <a href="#about" class="text-secondary-light hover:text-accent transition duration-300">Acerca de</a>
+                <a href="#skills" class="text-secondary-light hover:text-accent transition duration-300">Herramientas y Habilidades</a>
+                <a href="#projects" class="text-secondary-light hover:text-accent transition duration-300">Portafolio</a>
+                <a href="#contact" class="text-secondary-light hover:text-accent transition duration-300">Contacto</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger Icon) --><button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-secondary-light hover:bg-primary-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) --><div id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-accent/20">
+            <a href="#about" class="block px-4 py-2 text-secondary-light hover:bg-background-main hover:text-accent">Acerca de</a>
+            <a href="#skills" class="block px-4 py-2 text-secondary-light hover:bg-background-main hover:text-accent">Herramientas y Habilidades</a>
+            <a href="#projects" class="block px-4 py-2 text-secondary-light hover:bg-background-main hover:text-accent">Portafolio</a>
+            <a href="#contact" class="block px-4 py-2 text-secondary-light hover:bg-background-main hover:text-accent">Contacto</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Hero Section (Intermediate Role) --><section id="hero" class="pt-16 pb-24 text-center">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">
+                <!-- Profile Image Placeholder --><div class="w-36 h-36 md:w-48 md:h-48 rounded-full bg-accent/10 border-4 border-accent/20 flex items-center justify-center overflow-hidden shadow-2xl">
+                    <!-- Icon: Pen Nib / Artistic focus --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-24 h-24 text-accent">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 20.655a1.875 1.875 0 0 1-.723.361l-5.388 1.077A.75.75 0 0 1 3.195 21.46L2.396 17.5a1.875 1.875 0 0 1 .361-.723l14.07-14.07Z" />
+                    </svg>
+                </div>
+                <!-- Text Content --><div class="text-left md:w-1/2">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Hola, soy <span class="text-accent">Iñaki Iribarren Pinciroli</span>
+                    </h2>
+                    <p class="text-2xl sm:text-3xl mt-2 text-secondary-light">
+                        Artista 3D y Diseñador en Crecimiento
+                    </p>
+                    <p class="mt-6 text-lg text-secondary-light/80 max-w-lg">
+                        Soy un artista emergente enfocado en aplicar técnicas de modelado, texturizado y animación en **proyectos personales y colaborativos**.
+                    </p>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-accent text-background-main font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            Ver Proyectos
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition duration-300">
+                            Colaborar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator --><hr class="border-t border-primary-dark mb-16">
+
+        <!-- About Me Section (Intermediate Content) --><section id="about" class="scroll-target py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Acerca de Mi Trabajo</h2>
+            <div class="bg-card-bg p-8 rounded-xl shadow-2xl">
+                <p class="text-lg text-secondary-light leading-relaxed">
+                    Durante los últimos **dos años**, he estado inmerso en el arte digital y la visualización. Mi enfoque principal es **aprender y dominar** el pipeline completo de creación 3D, desde el boceto inicial hasta el renderizado. Estoy en una fase de rápido **crecimiento** y disfruto experimentando con nuevas herramientas y flujos de trabajo.
+                </p>
+                <p class="text-lg text-secondary-light leading-relaxed mt-4">
+                    Tengo una base sólida en el software estándar de la industria y estoy perfeccionando mis habilidades en la narración visual. Busco activamente proyectos que me permitan **aplicar mis conocimientos** y seguir construyendo un portafolio diverso y de calidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- Separator --><hr class="border-t border-primary-dark my-16">
+
+        <!-- Skills Section (Updated for Design/3D Tools - Only 5 skills now) --><section id="skills" class="scroll-target py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Herramientas y Habilidades Centrales</h2>
+            <!-- Cambiada la cuadrícula a 5 columnas para que se ajuste mejor, o mantenemos 6 y quedan 5 llenas -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                
+                <!-- Skill Card 1: 3D Modeling (Blender/Maya) --><div class="bg-card-bg p-6 rounded-xl shadow-lg border border-primary-dark hover:border-accent transition duration-300 flex flex-col items-center text-center">
+                    <!-- Icon: 3D Cube (Modeling) --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-secondary-light mb-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    </svg>
+                    <p class="font-semibold">Blender / Maya</p>
+                    <p class="text-xs text-secondary-light">Modelado y Mapeo UV</p>
+                </div>
+
+                <!-- Skill Card 2: Texturing & Shading (Substance) --><div class="bg-card-bg p-6 rounded-xl shadow-lg border border-primary-dark hover:border-accent transition duration-300 flex flex-col items-center text-center">
+                    <!-- Icon: Paint Brush / Palette (Texturing) --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-secondary-light mb-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM15.75 9.75h-.008v.008h.008V9.75Zm-2.25 4.5h-.008v.008h.008v-.008Zm-5.25 0h-.008v.008h.008v-.008ZM12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 11.25l2.25 2.25 2.25-2.25" />
+                    </svg>
+                    <p class="font-semibold">Substance Painter</p>
+                    <p class="text-xs text-secondary-light">Texturizado PBR</p>
+                </div>
+
+                <!-- Skill Card 3: Motion Graphics (After Effects) --><div class="bg-card-bg p-6 rounded-xl shadow-lg border border-primary-dark hover:border-accent transition duration-300 flex flex-col items-center text-center">
+                    <!-- Icon: Film Reel (Animation) --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-secondary-light mb-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.5M10.5 18h3L12 19.5v-1.5M9 6v1.5M10.5 6h3L12 4.5v1.5m-3 0h3L12 4.5v1.5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    </svg>
+                    <p class="font-semibold">After Effects</p>
+                    <p class="text-xs text-secondary-light">Gráficos en Movimiento</p>
+                </div>
+
+                <!-- Skill Card 4: 2D/Concept Design (Adobe Suite) --><div class="bg-card-bg p-6 rounded-xl shadow-lg border border-primary-dark hover:border-accent transition duration-300 flex flex-col items-center text-center">
+                    <!-- Icon: Layers (Design/UI) --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-secondary-light mb-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0M3.75 18H7.5m3-6h9.75m-9.75 0a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 0 0-3 0M3.75 12H7.5" />
+                    </svg>
+                    <p class="font-semibold">Photoshop / Illustrator</p>
+                    <p class="text-xs text-secondary-light">Concepto y Composición</p>
+                </div>
+
+                <!-- Skill Card 5: Sculpting (ZBrush) --><div class="bg-card-bg p-6 rounded-xl shadow-lg border border-primary-dark hover:border-accent transition duration-300 flex flex-col items-center text-center">
+                    <!-- Icon: Pen/Sculpting tool (High Detail) --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-secondary-light mb-3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.316l-3.371 4.364c-.426.554-.924.965-1.501 1.258-2.613 1.34-5.83.9-8.412-1.325.228-.27.464-.51.708-.727l10.875-10.875 3.371 4.364Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 15l.375.375.375.375" />
+                    </svg>
+                    <p class="font-semibold">ZBrush / Sculpting</p>
+                    <p class="text-xs text-secondary-light">Modelado de Alta Poli</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Separator --><hr class="border-t border-primary-dark my-16">
+
+        <!-- Projects Section (Intermediate Projects) --><section id="projects" class="scroll-target py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Piezas Destacadas del Portafolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: 3D Model (Focus on learning pipeline) --><div class="bg-card-bg rounded-xl shadow-2xl overflow-hidden group hover:shadow-accent/50 transition duration-500 transform hover:-translate-y-1">
+                    <!-- ESPACIO PARA TU IMAGEN -->
+                    <div id="project-1" class="project-image-placeholder">
+                        IMAGEN DE PROYECTO 1
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Práctica de Entorno Modular</h3>
+                        <p class="text-secondary-light mb-4 text-sm">Ejercicio de Modelado y Texturizado</p>
+                        <p class="text-secondary-light/80 text-base">
+                            Ejercicio de clase enfocado en el **flujo de trabajo** básico de modelado de entornos. Se practicó el modelado modular y la aplicación de texturas PBR simples para lograr un ambiente futurista.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">Blender</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">Substance Painter</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">UE5</span>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <a href="#" class="text-accent hover:text-secondary-light font-medium flex items-center">
+                                Ver Galería
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.55 3.5l1.55-1.55M17.25 6h-10.5a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V8.25a2.25 2.25 0 0 0-2.25-2.25Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Motion Graphics (Focus on technical practice) --><div class="bg-card-bg rounded-xl shadow-2xl overflow-hidden group hover:shadow-accent/50 transition duration-500 transform hover:-translate-y-1">
+                    <!-- ESPACIO PARA TU IMAGEN -->
+                    <div id="project-2" class="project-image-placeholder">
+                        IMAGEN DE PROYECTO 2
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Animación de Tipografía Cinética</h3>
+                        <p class="text-secondary-light mb-4 text-sm">Corto de Práctica Personal</p>
+                        <p class="text-secondary-light/80 text-base">
+                            Corto personal de 30 segundos creado para practicar la **sincronización de audio**, el diseño de tipografía y la integración de elementos 2D con un render 3D básico en movimiento.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">After Effects</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">Illustrator</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">C4D/Blender</span>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <a href="#" class="text-accent hover:text-secondary-light font-medium flex items-center">
+                                Ver Video
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.353 1.636-.918l8.956 5.581c.725.452.725 1.554 0 2.006l-8.956 5.581c-.719.435-1.636-.062-1.636-.918V5.653Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Interactive Web 3D (Focus on exploration) --><div class="bg-card-bg rounded-xl shadow-2xl overflow-hidden group hover:shadow-accent/50 transition duration-500 transform hover:-translate-y-1">
+                    <!-- ESPACIO PARA TU IMAGEN -->
+                    <div id="project-3" class="project-image-placeholder">
+                        IMAGEN DE PROYECTO 3
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Diseño de Personaje Estilizado</h3>
+                        <p class="text-secondary-light mb-4 text-sm">Modelado y Esculpido de Personaje</p>
+                        <p class="text-secondary-light/80 text-base">
+                            Un proyecto personal para desarrollar habilidades en el **esculpido digital** y el diseño de personajes. Enfocado en la topología, el *look development* y el renderizado final de un personaje estilizado.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">ZBrush</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">Substance Painter</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary-dark text-secondary-light">Blender</span>
+                        </div>
+                        <div class="mt-6 flex space-x-3">
+                            <a href="#" class="text-accent hover:text-secondary-light font-medium flex items-center">
+                                Ver Estudio
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.55 3.5l1.55-1.55M17.25 6h-10.5a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V8.25a2.25 2.25 0 0 0-2.25-2.25Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Nuevo mensaje opcional al final de los proyectos, ya que solo hay 3 -->
+            <div class="text-center mt-12 text-secondary-light/70 text-lg">
+                <p>Estoy trabajando en nuevos proyectos, incluyendo un corto de animación. ¡Vuelve pronto para ver más!</p>
+            </div>
+        </section>
+
+        <!-- Separator --><hr class="border-t border-primary-dark my-16">
+
+        <!-- Contact Section --><section id="contact" class="scroll-target py-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Colaboremos y Creemos</h2>
+            <div class="bg-card-bg p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto border border-primary-dark">
+                <p class="text-secondary-light text-center mb-8">
+                    Estoy abierto a proyectos de colaboración, oportunidades de aprendizaje o trabajos de nivel inicial. ¡Envíame un mensaje!
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-secondary-light mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-background-main border border-primary-dark rounded-lg focus:ring-accent focus:border-accent outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-secondary-light mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-background-main border border-primary-dark rounded-lg focus:ring-accent focus:border-accent outline-none">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-secondary-light mb-2">Detalles (Oportunidad o Idea)</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-background-main border border-primary-dark rounded-lg focus:ring-accent focus:border-accent outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-accent text-background-main font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                        Enviar Mensaje
+                    </button>
+                    <!-- Success Message Box --><div id="success-message" class="hidden text-center p-4 bg-green-500/20 text-green-300 rounded-lg border border-green-500/50 mt-4">
+                        ¡Gracias! Tu mensaje ha sido recibido. Te contactaré pronto.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="bg-primary-dark py-8 mt-12 border-t border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-secondary-light">
+            <p class="text-sm">&copy; 2025 [Tu Nombre de Artista]. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-4 mt-4 text-accent">
+                <!-- Social Media Links (Replace '#' with your actual URLs) --><a href="#" target="_blank" aria-label="LinkedIn" class="hover:text-secondary-light transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.75s.784-1.75 1.75-1.75 1.75.79 1.75 1.75-.783 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.367-4-3.565-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.784 7 2.456v6.779z"/></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="ArtStation" class="hover:text-secondary-light transition">
+                    <!-- Placeholder for ArtStation or similar platform --><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21.996 11.458c0-.623-.526-1.116-1.18-.946l-4.223 1.18c-1.396.391-2.822.427-4.223.109l-3.955-.913c-.991-.226-2.126-.143-3.149.231-.763.279-1.52.48-2.285.604-.085.013-.153.053-.223.093l-.867.489c-.615.344-.993.99-.993 1.733v.373c0 .62.527 1.114 1.18.946l4.222-1.18c1.397-.39 2.823-.427 4.223-.109l3.955.913c.99.227 2.126.143 3.15-.231.763-.28 1.519-.48 2.284-.604.085-.013.153-.053.223-.093l.867-.489c.615-.344.993-.99.993-1.733v-.373zM7.224 8.685c-.962-.352-1.722-.53-2.61-.433-2.007.227-3.614 2.05-3.614 4.195 0 2.49 2.022 4.512 4.512 4.512 2.49 0 4.512-2.022 4.512-4.512 0-2.145-1.607-3.968-3.614-4.195z"/>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram" class="hover:text-secondary-light transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.2 0 3.58.012 4.85.074 1.18.06 1.8.258 2.348.472.548.214.975.5.34.86.365.365.646.793.86 1.34.214.548.412 1.168.472 2.348.062 1.27.074 1.65.074 4.85s-.012 3.58-.074 4.85c-.06 1.18-.258 1.8-.472 2.348-.214.548-.5.975-.86 1.34-.365.365-.793.646-1.34.86-.548.214-1.168.412-2.348.472-1.27.062-1.65.074-4.85.074s-3.58-.012-4.85-.074c-1.18-.06-1.8-.258-2.348-.472-.548-.214-.975-.5-1.34-.86-.365-.365-.646-.793-.86-1.34-.214-.548-.412-1.168-.472-2.348-.062-1.27-.074-1.65-.074-4.85s.012-3.58.074-4.85c.06-1.18.258-1.8.472-2.348.214-.548.5-.975.86-1.34.365-.365.793-.646 1.34-.86.548-.214 1.168-.412 2.348-.472 1.27-.062 1.65-.074 4.85-.074zm0-2.163c-3.376 0-3.882.012-5.212.074-1.42.067-2.323.284-3.14.608-.813.327-1.5.76-2.164 1.424-.663.664-1.096 1.35-1.424 2.164-.324.817-.54 1.72-.608 3.14-.062 1.33-.074 1.836-.074 5.212s.012 3.882.074 5.212c.067 1.42.284 2.323.608 3.14.327.813.76 1.5 1.424 2.164.664.663 1.35 1.096 2.164 1.424.817.324 1.72.54 3.14.608 1.33.062 1.836.074 5.212.074s3.882-.012 5.212-.074c1.42-.067 2.323-.284 3.14-.608.813-.327 1.5-.76 2.164-1.424.663-.664 1.35-1.096 2.164-1.424-.817-.324-1.72-.54-3.14-.608-1.33-.062-1.836-.074-5.212-.074zM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.774a3.639 3.639 0 1 1 0-7.278 3.639 3.639 0 0 1 0 7.278zm6.406-11.841a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle and smooth scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+
+            // 1. Mobile Menu Toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Smooth Scrolling and Mobile Menu Close
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        // Scroll to the element with a header offset
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 3. Contact Form Submission Handler (Mock Functionality)
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Stop the default form submission
+
+                // Simulate form submission process
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                console.log('Form Submitted (Mock Data):', data);
+
+                // Show success message and clear form fields
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            });
+        });
+    </script>
